@@ -51,7 +51,7 @@ Data::~Data()
 
 void Data::Print()
 {
-	cout << "ÔÈÎ" << initials.surname << " " << initials.name <<  " " << initials.patronymic << endl;
+	cout << "Ð¤Ð˜Ðž" << initials.surname << " " << initials.name <<  " " << initials.patronymic << endl;
  }
 
 
@@ -76,7 +76,7 @@ Data& Data::operator=(Data d_o) {
 
 void DataEntry(Data* (&d), int& n) {
 	Initials initials;
-	cout << "Ââåäèòå ðàçìåð ìàññèâà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð°: ";
 	cin >> n;
 	d = new Data[n];
 	for (int i = 0; i < n; i++) {
@@ -97,17 +97,17 @@ void DataReading(Data* (&d), int& n, string filename) {
 			reading >> initials.surname >> initials.name >> initials.patronymic;
 			d[i].DataEntry(initials);
 		}
-		cout << "Äàííûå ñ÷èòàíû!" << endl;
+		cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑÑ‡Ð¸Ñ‚Ð°Ð½Ñ‹!" << endl;
 	}
 	else
-		cout << "Îøèáêà ïðè îòêðûòèè ôàéëà!" << endl;
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð°!" << endl;
 
 	reading.close();
 }
 
 void Print(Data* d, int n) {
 	for (int i = 0; i < n; i++) {
-		cout << "Äàííûå ¹" << i + 1 << endl;
+		cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ â„–" << i + 1 << endl;
 		d[i].Print();
 		cout << "_____________________________________________";
 	}
@@ -116,16 +116,16 @@ void Print(Data* d, int n) {
 void DataChange(Data* d, int n) {
 	Initials initials;
 	int _n;
-	cout << "Ââåäèòå íîìåð íóæíîãî ýëåìåíòà (îò 1 äî " << n << "):";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð½ÑƒÐ¶Ð½Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° (Ð¾Ñ‚ 1 Ð´Ð¾ " << n << "):";
 	cin >> _n;
 	_n--;
 	if (_n >= 0 && _n < n) {
-		cout << "Ââåäèòå íîâóþ ÔÈÎ: ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²ÑƒÑŽ Ð¤Ð˜Ðž: ";
 		cin >> initials.surname >> initials.name >> initials.patronymic;
 		d[_n].DataEntry(initials);
 	}
 	else
-		cout << "Íîìåð ââåä¸í íåâåðíî!" << endl;
+		cout << "ÐÐ¾Ð¼ÐµÑ€ Ð²Ð²ÐµÐ´Ñ‘Ð½ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾!" << endl;
 
 }
 
@@ -141,17 +141,17 @@ void AddData(Data* (&d), int& n) {
 	Copy(buf, d, size);
 	d = new Data[new_size];
 	Copy(d, buf, size);
-	cout << "Ââåäèòå íîâóþ ÔÈÎ: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²ÑƒÑŽ Ð¤Ð˜Ðž: ";
 	cin >> initials.surname >> initials.name >> initials.patronymic;
 	d[size].DataEntry(initials);
-	cout << "Äàííûå äîáàâëåíû!" << endl;
+	cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ñ‹!" << endl;
 	delete[] buf;
 }
 
 void DeleteData(Data* (&d), int& n) {
 	int _n;
 	Data* buf = new Data[n];
-	cout << "Ââåäèòå íîìåð íóæíîãî ýëåìåíòà (îò 1 äî " << n << "):";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð½ÑƒÐ¶Ð½Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° (Ð¾Ñ‚ 1 Ð´Ð¾ " << n << "):";
 	cin >> _n;
 	_n--;
 	if (_n >= 0 && _n < n) {
@@ -165,10 +165,10 @@ void DeleteData(Data* (&d), int& n) {
 				q++;
 			}
 		}
-		cout << "Äàííûå óäàëåíû!" << endl;
+		cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑƒÐ´Ð°Ð»ÐµÐ½Ñ‹!" << endl;
 	}
 	else
-		cout << "Íîìåð ââåä¸í íåâåðíî!" << endl;
+		cout << "ÐÐ¾Ð¼ÐµÑ€ Ð²Ð²ÐµÐ´Ñ‘Ð½ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾!" << endl;
 	delete[] buf;
 }
 
@@ -186,7 +186,7 @@ void SortingData(Data* d, int n) {
 			}
 		}
 	}
-	cout << "Äàííûå îòñîðòèðîâàíû!\nÊîëè÷åñòâî ñîðòèðîâîê:" << numofSorted << endl;
+	cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð¾Ñ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ñ‹!\nÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð¾Ðº:" << numofSorted << endl;
 }
 
 void SaveData(Data* d, int n, string filename) {
@@ -200,8 +200,8 @@ void SaveData(Data* d, int n, string filename) {
 		}
 	}
 	else
-		cout << "Îøèáêà ïðè îòêðûòèè ôàéëà!" << endl;
-	cout << "Äàííûå ñîõðàíåíû â ôàéë:" << filename << endl;
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð°!" << endl;
+	cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹ Ð² Ñ„Ð°Ð¹Ð»:" << filename << endl;
 	record.close();
 }
 
@@ -210,16 +210,16 @@ void SaveData(Data* d, int n, string filename) {
 
 int _stateMenu;
 void Menu() {
-	cout << "Âûáåðèòå äåéñòâèå: " << endl
-		<< "(0) Âûõîä èç ïðîãðàììû" << endl
-		<< "(1) Ââîä äàííûõ" << endl
-		<< "(2) Âûâîä äàííûõ" << endl
-		<< "(3) Èçìåíåíèå äàííûõ" << endl
-		<< "(4) Äîáàâëåíèå äàííûõ" << endl
-		<< "(5) Óäàëåíèå äàííûõ" << endl
-		<< "(6) Ñîðòèðîâêà äàííûõ" << endl
-		<< "(7) Ñîõðàíåíèå äàííûõ" << endl
-		<< "Âàø âûáîð:  ";
+	cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: " << endl
+		<< "(0) Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹" << endl
+		<< "(1) Ð’Ð²Ð¾Ð´ Ð´Ð°Ð½Ð½Ñ‹Ñ…" << endl
+		<< "(2) Ð’Ñ‹Ð²Ð¾Ð´ Ð´Ð°Ð½Ð½Ñ‹Ñ…" << endl
+		<< "(3) Ð˜Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ñ…" << endl
+		<< "(4) Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ñ…" << endl
+		<< "(5) Ð£Ð´Ð°Ð»ÐµÐ½Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ñ…" << endl
+		<< "(6) Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° Ð´Ð°Ð½Ð½Ñ‹Ñ…" << endl
+		<< "(7) Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ñ…" << endl
+		<< "Ð’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€:  ";
 	cin >> _stateMenu;
 
 }
@@ -248,7 +248,7 @@ void main() {
 			if (_size != 0)
 				Print(d, _size);
 			else
-				cout << "Äàííûå ïóñòû!" << endl;
+				cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð¿ÑƒÑÑ‚Ñ‹!" << endl;
 			system("pause");
 			system("cls");
 			Menu();
@@ -257,7 +257,7 @@ void main() {
 			system("cls");
 			if (_size != 0)
 				DataChange(d, _size);
-			else cout << "Äàííûå ïóñòû!" << endl;
+			else cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð¿ÑƒÑÑ‚Ñ‹!" << endl;
 			system("pause");
 			system("cls");
 			Menu();
@@ -267,7 +267,7 @@ void main() {
 			if (_size != 0)
 				AddData(d, _size);
 			else
-				cout << "Äàííûå ïóñòû!" << endl;
+				cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð¿ÑƒÑÑ‚Ñ‹!" << endl;
 			system("pause");
 			system("cls");
 			Menu();
@@ -277,7 +277,7 @@ void main() {
 			if (_size != 0)
 				DeleteData(d, _size);
 			else
-				cout << "Äàííûå ïóñòû!" << endl;
+				cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð¿ÑƒÑÑ‚Ñ‹!" << endl;
 			system("pause");
 			system("cls");
 			Menu();
@@ -287,7 +287,7 @@ void main() {
 			if (_size != 0)
 				SortingData(d, _size);
 			else
-				cout << "Äàííûå ïóñòû!" << endl;
+				cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð¿ÑƒÑÑ‚Ñ‹!" << endl;
 			system("pause");
 			system("cls");
 			Menu();
@@ -297,20 +297,20 @@ void main() {
 			if (_size != 0)
 				SaveData(d, _size, "Out.txt");
 			else
-				cout << "Äàííûå ïóñòû!" << endl;
+				cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð¿ÑƒÑÑ‚Ñ‹!" << endl;
 			system("pause");
 			system("cls");
 			Menu();
 			break;
 		default:
-			cout << "Ïóíêò ìåíþ ââåä¸í íåâåðíî!" << endl;
+			cout << "ÐŸÑƒÐ½ÐºÑ‚ Ð¼ÐµÐ½ÑŽ Ð²Ð²ÐµÐ´Ñ‘Ð½ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾!" << endl;
 			system("cls");
 			Menu();
 			break;
 		}
 	}
 	system("cls");
-	cout << "Ðàáîòà çàâåðøåíà!" << endl;
+	cout << "Ð Ð°Ð±Ð¾Ñ‚Ð° Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð°!" << endl;
 	system("pause");
 }
 
